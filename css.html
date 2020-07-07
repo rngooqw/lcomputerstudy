@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>CSS3 교재 - 엘컴퓨터학원</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        h2 {
+            margin-top: 50px;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .clear-both::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex-row-reverse {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-column-reverse {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .flex-flow-wrap {
+            display: flex;
+            flex-flow: row wrap;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        .flex-flow-nowrap {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 250px;
+            border: 1px solid black;
+        }
+
+        .flex-flow-wrap-reverse {
+            display: flex;
+            flex-flow: row wrap-reverse;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        .item {
+            width: 100px;
+            border: 1px solid black;
+        }
+
+        .item1 {
+            width: 100px;
+            height: 20px;
+            border: 1px solid black;
+        }
+
+        .item2 {
+            width: 100px;
+            height: 80px;
+            border: 1px solid black;
+        }
+
+        .item3 {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+        }
+
+        .flex-start {
+            display: flex;
+            width: 500px;
+            justify-content: flex-start;
+            border: 1px solid black;
+        }
+
+        .flex-end {
+            display: flex;
+            width: 500px;
+            justify-content: flex-end;
+            border: 1px solid black;
+        }
+
+        .flex-center {
+            display: flex;
+            width: 500px;
+            justify-content: center;
+            border: 1px solid black;
+        }
+
+        .flex-space-between {
+            display: flex;
+            width: 500px;
+            justify-content: space-between;
+            border: 1px solid black;
+        }
+
+        .flex-space-around {
+            display: flex;
+            width: 500px;
+            justify-content: space-around;
+            border: 1px solid black;
+        }
+
+        .flex-space-evenly {
+            display: flex;
+            width: 500px;
+            justify-content: space-evenly;
+            border: 1px solid black;
+        }
+
+        .align-items-stretch {
+            display: flex;
+            width: 500px;
+            height: 100px;
+            align-items: stretch;
+            border: 1px solid black;
+        }
+
+        .align-items-flex-start {
+            display: flex;
+            width: 500px;
+            height: 100px;
+            align-items: flex-start;
+            border: 1px solid black;
+        }
+
+        .align-items-flex-end {
+            display: flex;
+            width: 500px;
+            height: 100px;
+            align-items: flex-end;
+            border: 1px solid black;
+        }
+
+        .align-items-center {
+            display: flex;
+            width: 500px;
+            height: 100px;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .align-items-baseline {
+            display: flex;
+            width: 500px;
+            height: 100px;
+            align-items: baseline;
+            border: 1px solid black;
+        }
+
+        .flex-justify-align-center {
+            display: flex;
+            height: 200px;
+            width: 500px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .align-content-stretch {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: stretch;
+        }
+
+        .align-content-flex-start {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .align-content-flex-end {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+
+        .align-content-center {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .align-content-space-between {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .align-content-space-around {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+
+        .align-content-space-evenly {
+            display: flex;
+            height: 200px;
+            width: 250px;
+            border: 1px solid black;
+
+            flex-wrap: wrap;
+            align-content: space-evenly;
+        }
+
+        .flex-item-px {
+            flex-basis: 100px;
+            border: 1px solid black;
+        }
+
+        .flex-item-auto {
+            flex-basis: auto;
+            border: 1px solid black;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+            border: 1px solid black;
+
+        }
+
+        .flex-grow-default {
+            flex-grow: 0;
+            border: 1px solid black;
+        }
+
+        .flex-grow-2 {
+            flex-grow: 2;
+            border: 1px solid black;
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0;
+            flex-basis: 100px;
+            border: 1px solid black;
+        }
+
+        .flex-shrink-1 {
+            flex-shrink: 1;
+            flex-basis: 100px;
+            border: 1px solid black;
+        }
+
+        .flex-shrink-2 {
+            flex-shrink: 2;
+            flex-basis: 100px;
+            border: 1px solid black;
+        }
+
+        .flex-small-container {
+            display: flex;
+            width: 300px;
+            border: 1px solid black;
+        }
+
+        .flex-all {
+            flex: 1 0 100px;    
+            /* flex-grow; flex-shrink; flex-basis; */
+            border: 1px solid black;
+        }
+
+        .align-self-stretch {
+            align-self: stretch;
+            border: 1px solid black;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+            border: 1px solid black;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+            border: 1px solid black;
+        }
+
+        .align-self-center {
+            align-self: center;
+            border: 1px solid black;
+        }
+
+        .align-self-baseline {
+            align-self: baseline;
+            border: 1px solid black;
+        }
+
+        .container-height {
+            display: flex;
+            border: 1px solid black;
+            height: 200px;
+        }
+
+        .item-z-index {
+            border: 1px solid black;
+            background-color: coral;
+            transform: scale(2);
+            z-index: 1;
+            height: 100px;
+            opacity: 0.8;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 1.5fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-container-repeat {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3, minmax(100px, auto));
+            border: 1px solid black;
+        }
+
+        .grid-item {
+            border: 1px solid black;
+        }
+
+        .grid-container-auto-fill {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+            border: 1px solid black;
+        }
+
+        .grid-container-auto-fit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body style="margin-bottom: 200px;">
+    <h1>CSS3 교재 - 엘컴퓨터학원</h1>
+    <p>소스를 보며 따라하거나 응용해 보세요.</p>
+
+    <h2>기본</h2>
+    <div>기본</div>
+
+    <h2>font-size</h2>
+    <div style="font-size: 15pt;">hello html</div>
+
+    <h2>color</h2>
+    <div style="color: chartreuse; border: 1px solid black;">color</div>
+
+    <h2>margin-top</h2>
+    <div style="margin-top: 50px; border: 1px solid black;">margin-top</div>
+
+    <h2>margin-left</h2>
+    <div style="margin-left: 100px; border: 1px solid black;">margin-left</div>
+
+    <h2>width</h2>
+    <div style="width: 100px; border: 1px solid black;">width</div>
+
+    <h2>margin-bottom</h2>
+    <div style="margin-bottom: 100px; border: 1px solid black">margin-bottom</div>
+
+    <h2>margin-right</h2>
+    <div style="margin-right: 100px; border: 1px solid black">margin-right</div>
+
+    <h2>padding-left</h2>
+    <div style="padding-left: 100px; border: 1px solid black">padding-left</div>
+
+    <h2>padding-top</h2>
+    <div style="padding-top: 100px; border: 1px solid black">padding-top</div>
+
+    <h2>height</h2>
+    <div style="height: 100px; border: 1px solid black">height</div>
+
+    <h2>padding-bottom</h2>
+    <div style="padding-bottom: 100px; border: 1px solid black">padding-bottom</div>
+
+    <h2>padding-right</h2>
+    <div style="padding-right: 100px; border: 1px solid black">padding-right</div>
+
+    <h2>font-family</h2>
+    <div style="font-family: Verdana;">font-family</div>
+
+    <h2>text-decoration: underline</h2>
+    <div style="text-decoration: underline;">text-decoration</div>
+
+    <h2>text-decoration: line-through</h2>
+    <div style="text-decoration: line-through;">text-decoration</div>
+
+    <h2>display: inline</h2>
+    <div style="display: inline; border: 1px solid black">display: inline (옆으로 붙임)</div>
+    <div style="display: inline; border: 1px solid black">display: inline (옆으로 붙임)</div>
+
+    <h2>display: block</h2>
+    <div style="display: block; border: 1px solid black">display: block (아래로 붙임)</div>
+
+    <h2>display: inline-block</h2>
+    <div style="display: inline-block; border: 1px solid black">display: inline-block (옆으로 붙임)</div>
+    <div style="display: inline-block; border: 1px solid black">display: inline-block (옆으로 붙임)</div>
+
+    <p>block 은 margin, padding, width, height 속성 사용 가능하며 아래로 붙임</p>
+    <p>inline 은 margin, padding, width, height 속성 사용 불가능하며 옆으로 붙임</p>
+    <p>inline-block 은 margin, padding, width, height 속성 사용 가능하며 옆으로 붙임</p>
+
+    <h2>display: none</h2>
+    <div style="display: none; border: 1px solid black">display: none</div>
+    <p>div를 보이지 않게 설정</p>
+
+    <h2>font-weight</h2>
+    <div style="font-weight: bold; border: 1px solid black">font-weight: bold</div>
+
+    <h2>font-style</h2>
+    <div style="font-style: italic; border: 1px solid black">font-style: italic</div>
+
+    <h2>text-align</h2>
+    <div style="text-align: right">text-align</div>
+    <div style="text-align: left">text-align</div>
+    <div style="text-align: center">text-align</div>
+
+    <h2>border</h2>
+    <div style="border: 1px solid red">border: 1px solid red</div>
+
+    <h2>backgound-color</h2>
+    <div style="background-color: blue;">background-color</div>
+    <div style="background-color: #bbff00;">background-color</div>
+    <div style="background-color: rgb(117, 190, 218)">background-color</div>
+    <div style="background-color: rgba(117, 190, 218, 0.2)">background-color (50% 불투명도)</div>
+
+    <h2>background-image</h2>
+    <div style="background-image: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');">background-image</div>
+
+    <h2>레이아웃 정렬 float 방식</h2>
+    <div class="clear-both">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+    <div class="border">4</div>
+
+    <h2>레이아웃 정렬 flex 방식</h2>
+    <div class="flex">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+    <div class="border">4</div>
+
+    <h2>flex block 방식</h2>
+    <div class="flex">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+    <div class="flex">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+
+    <h2>inline-flex block 방식</h2>
+    <div class="inline-flex">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+    <div class="inline-flex">
+        <div class="float-left border">1</div>
+        <div class="float-left border">2</div>
+        <div class="float-left border">3</div>
+    </div>
+
+    <h2>flex 가로 정렬</h2>
+    <div class="flex-row">
+        <div class="box border">1</div>
+        <div class="box border">2</div>
+        <div class="box border">3</div>
+    </div>
+
+    <h2>flex 가로 역 정렬</h2>
+    <div class="flex-row-reverse">
+        <div class="box border">1</div>
+        <div class="box border">2</div>
+        <div class="box border">3</div>
+    </div>
+
+    <h2>flex 세로 정렬</h2>
+    <div class="flex-column">
+        <div class="border">1</div>
+        <div class="border">2</div>
+        <div class="border">3</div>
+    </div>
+
+    <h2>flex 세로 역 정렬</h2>
+    <div class="flex-column-reverse">
+        <div class="border">1</div>
+        <div class="border">2</div>
+        <div class="border">3</div>
+    </div>
+
+    <h2>감싼 div의 넓이 보다 내부 div 넓이 총 합이 더 클 때 넘치는 요소를 밑으로 내림</h2>
+    <div class="flex-flow-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>감싼 div의 넓이 보다 내부 div 넓이 총 합이 더 클 때 넘치는 요소들의 넓이를 줄임</h2>
+    <div class="flex-flow-nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>감싼 div의 넓이 보다 내부 div 넓이 총 합이 더 클 때 넘치는 요소들의 넓이를 줄임</h2>
+    <div class="flex-flow-wrap-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    
+    <h2>justify-content: flex-start (flex 정렬)</h2>
+    <div class="flex-start">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>justify-content: flex-end</h2>
+    <div class="flex-end">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>justify-content: flex-center</h2>
+    <div class="flex-center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>justify-content: flex-space-between</h2>
+    <div class="flex-space-between">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+
+    <h2>justify-content: space-around</h2>
+    <div class="flex-space-around">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <p>space-around 는 item 좌우로 같은 넓이 만큼 띄웁니다.</p>
+
+    <h2>justify-content: space-evenly</h2>
+    <div class="flex-space-evenly">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <p>space-evenly 는 item 간의 간격을 동일하게 만듭니다.</p>
+
+    <h2>align-items: stretch</h2>
+    <div class="align-items-stretch">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-items: flex-start</h2>
+    <div class="align-items-flex-start">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-items: flex-end</h2>
+    <div class="align-items-flex-end">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-items: center</h2>
+    <div class="align-items-center">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-items: baseline</h2>
+    <div class="align-items-baseline">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+    <p>텍스트 기준 정렬</p>
+
+    <h2>justify-contert: center; align-items: center;</h2>
+    <div class="flex-justify-align-center">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content-stretch; flex-wrap: wrap;</h2>
+    <div class="align-content-stretch">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content-flex-start; flex-wrap: wrap;</h2>
+    <div class="align-content-flex-start">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content: flex-end; flex-wrap: wrap;</h2>
+    <div class="align-content-flex-end">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content: center; flex-wrap: wrap;</h2>
+    <div class="align-content-center">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content: space-between; flex-wrap: wrap;</h2>
+    <div class="align-content-space-between">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+    <h2>align-content: space-around; flex-wrap: wrap;</h2>
+    <div class="align-content-space-around">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+    <p>space-around 는 item 아래 위로 같은 높이 만큼 띄웁니다.</p>
+
+    <h2>align-content: space-evenly; flex-wrap: wrap;</h2>
+    <div class="align-content-space-evenly">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+    <p>- space-evenly 는 item 간의 간격을 동일하게 만듭니다.</p>
+
+    <h2>flex-basis: 100px</h2>
+    <div class="flex border">
+        <div class="flex-item-px">aaaa</div>
+        <div class="flex-item-px">aaaaaa</div>
+        <div class="flex-item-px">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    </div>
+    <p>개체의 넓이가 100px 보다 작을 경우 100px로 변경, 100px 보다 크다면 큰 값을 그대로 가져 갑니다. </p>
+
+    <h2>flex-basis: auto</h2>
+    <div class="flex border">
+        <div class="flex-item-auto">aaaa</div>
+        <div class="flex-item-auto">aaaaaa</div>
+        <div class="flex-item-auto">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+    </div>
+    <p>개체 사이즈와 동일하게 설정 됩니다.</p>
+
+    <h2>flex-grow: 1</h2>
+    <div class="flex border">
+        <div class="flex-grow">aaaa</div>
+        <div class="flex-grow">bbbbbb</div>
+        <div class="flex-grow">ccccccccc</div>
+    </div>
+
+    <h2>flex-grow: 0</h2>
+    <div class="flex border">
+        <div class="flex-grow-default">aaaa</div>
+        <div class="flex-grow-default">bbbbbb</div>
+        <div class="flex-grow-default">ccccccccc</div>
+    </div>
+    <p>flex-grow의 기본 값은 0이며 1로 설정 시 부모 개체에 맞게 넓이 값을 조정합니다.</p>
+
+    <h2>flex-grow: 2</h2>
+    <div class="flex border">
+        <div class="flex-grow">aaaa</div>
+        <div class="flex-grow-2">bbbbbb</div>
+        <div class="flex-grow">ccccccccc</div>
+    </div>
+    <p>flex-grow에 들어간 숫자는 여백을 다른 요소 보다 지정된 숫자 배수로 설정하겠다는 의미입니다.</p>
+
+    <h2>flex-shrink: 0</h2>
+    <div class="flex-small-container">
+        <div class="flex-shrink-0">aaa</div>
+        <div class="flex-shrink-1">bbbbbbbbbbbbbbbbbbbb</div>
+        <div class="flex-shrink-1">cccccccccccccccccccc</div>
+    </div>
+    <p>flex-shrink 를 0으로 설정 시 flex-basis 에 설정된 width 보다 넓이가 좁아 질 수 없도록 강제합니다.</p>
+
+    <h2>flex-shrink: 1</h2>
+    <div class="flex-small-container">
+        <div class="flex-shrink-1">aaa</div>
+        <div class="flex-shrink-1">bbbbbbbbbbbbbbbbbbbb</div>
+        <div class="flex-shrink-1">cccccccccccccccccccc</div>
+    </div>
+    <p>flex-shrink 를 1로 설정하여 flex-basis 의 값 보다 width 값이 좁아 졌습니다. (기본 설정은 1입니다.)</p>
+
+    <h2>flex: 1 0 100px;</h2>
+    <div class="flex-small-container">
+        <div class="flex-all">aaa</div>
+        <div class="flex-all">bbbbbbbbbbbbbbbbbbbb</div>
+        <div class="flex-all">cccccccccccccccccccc</div>
+    </div>
+    <p>flex속성은 flex-grow, flex-shrink, flex-basis 를 한 번에 설정할 수 있습니다.</p>
+    
+    <h2>align-self</h2>
+    <div class="container-height">
+        <div class="align-self-stretch">aaa</div>
+        <div class="align-self-flex-start">bbb</div>
+        <div class="align-self-flex-end">ccc</div>
+        <div class="align-self-center">ddd</div>
+        <div class="align-self-baseline">eee</div>
+    </div>
+
+    <h2>z-index</h2>
+    <div class="container-height">
+        <div class="item">aaa</div>
+        <div class="item">bbb</div>
+        <div class="item-z-index">ccc</div>
+    </div>
+    <p>z-index 숫자가 높을 수록 화면에 나중에 출력 되므로 다른 요소들 보다 위에 그려집니다.</p>
+    
+    <h2>grid</h2>
+    <div class="grid-container">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+
+    <h2>grid repeat(), minmax()</h2>
+    <div class="grid-container-repeat">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>repeat(반복횟수, 넓이 또는 높이)</p>
+    <p>minmax(최소값, 최대값)</p>
+
+    <h2>auto-fill</h2>
+    <div class="grid-container-auto-fill">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>minmax(20%, auto) 로 인해 한 줄에 최대 5개까지 그려지며 전체 개수만큼 자동으로 row가 생깁니다.</p>
+
+    <h2>auto-fit</h2>
+    <div class="grid-container-auto-fit">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+    </div>
+    <p>auto-fill은 부족한 한 개 공간을 비워 두고 auto-fix은 요소 4개를 이용해 빈 곳을 채웁니다.</p>
+
+    
+    
+</body>
+</html>
