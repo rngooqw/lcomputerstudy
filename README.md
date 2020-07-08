@@ -1,3 +1,2 @@
 # lcomputerstudy
-test
-test2
+엘컴퓨터

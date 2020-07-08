@@ -382,6 +382,117 @@
             border: 1px solid black;
         }
 
+        .grid-container-row-column-gap {
+            display: grid;
+            row-gap: 10px;
+            column-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-container-gap {
+            display: grid;
+            gap: 30px 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-container-gap2 {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-auto-rows {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+            border: 1px solid black;
+        }
+
+        .grid-default-container {
+            display: grid;
+            grid-gap: 10px;
+            text-align: center;
+            line-height: 100px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+            border: 1px solid black;
+        }
+
+        .grid-column-item {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 4;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-1 {
+            background-color: rgb(117, 190, 218);
+            opacity: 0.8;
+            grid-column: 1 / 3;
+            grid-row: 1;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-2 {
+            background-color: seagreen;
+            opacity: 0.8;
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-3 {
+            background-color: slateblue;
+            opacity: 0.8;
+            grid-column: 1 / 2;
+            grid-row: 2 / 5;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-4 {
+            background-color: steelblue;
+            opacity: 0.8;
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-5 {
+            background-color: tomato;
+            opacity: 0.8;
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+
+            border: 1px solid black;
+        }
+
+        .grid-column-item-6 {
+            background-color: teal;
+            opacity: 0.8;
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+
+            border: 1px solid black;
+        }
+
+        #grid1 > .grid-item:nth-child(1) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 3;
+        }
+        
+
     </style>
 </head>
 <body style="margin-bottom: 200px;">
@@ -835,7 +946,106 @@
         <div class="grid-item">ccc</div>
         <div class="grid-item">ddd</div>
     </div>
-    <p>auto-fill은 부족한 한 개 공간을 비워 두고 auto-fix은 요소 4개를 이용해 빈 곳을 채웁니다.</p>
+    <p>auto-fill 은 부족한 한 개 공간을 비워 두고 auto-fix 는 요소 4개를 이용해 빈 곳을 채웁니다.</p>
+
+    <h2>row-gap, column-gap</h2>
+    <div class="grid-container-row-column-gap">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    
+    <h2>gap: 30px 10px</h2>
+    <div class="grid-container-gap">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>row-gap: 30px; column-gap 10px</p>
+
+    <h2>gap: 10px</h2>
+    <div class="grid-container-gap2">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>row-gap: 10px; column-gap 10px</p>
+
+    <h2>grid-auto-rows: repeat(100px, auto)</h2>
+    <div class="grid-auto-rows">
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>몇 줄인지 알 수 없을 때 grid-auto-rows: repeat(100px, auto) 를 이용하면 줄 수가 자동으로 늘어 납니다.</p>
+
+    <h2>grid-column, grid-row</h2>
+    <div class="grid-default-container">
+        <div class="grid-column-item">bbb</div>
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>column 이 3칸일 경우 첫 번째 칸의 왼쪽 상단 모서리 포인트 부터 시작하여 부터 끝 점까지 1, 2, 3, 4, 5, 6 으로 지정 할 수 있습니다.</p>
+    <p>row 가 3줄일 경우 첫 번째 줄의 상단 포인트 </p>
+    <p><img src="./1.jpg"></p>
+
+    <h2>grid-column, grid-row</h2>
+    <div class="grid-default-container">
+        <div class="grid-column-item-1">1</div>
+        <div class="grid-column-item-2">2</div>
+        <div class="grid-column-item-3">3</div>
+        <div class="grid-column-item-4">4</div>
+        <div class="grid-column-item-5">5</div>
+        <div class="grid-column-item-6">6</div>
+    </div>
+
+    <h2>grid-column: 1 / span 2; grid-row: 1 / span 3;</h2>
+    <div class="grid-default-container" id="grid1">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>1부터 2칸 (span 2), 1부터 3번째 줄(span 3) 로 해석하시면 됩니다. </p>
+
+    
+    
+
 
     
     
