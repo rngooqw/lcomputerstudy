@@ -382,6 +382,33 @@
             border: 1px solid black;
         }
 
+        .grid-container-row-column-gap {
+            display: grid;
+            row-gap: 10px;
+            column-gap: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-container-gap {
+            display: grid;
+            gap: 30px 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        .grid-container-gap2 {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            border: 1px solid black;
+        }
+
+        
+
     </style>
 </head>
 <body style="margin-bottom: 200px;">
@@ -835,7 +862,50 @@
         <div class="grid-item">ccc</div>
         <div class="grid-item">ddd</div>
     </div>
-    <p>auto-fill은 부족한 한 개 공간을 비워 두고 auto-fix은 요소 4개를 이용해 빈 곳을 채웁니다.</p>
+    <p>auto-fill 은 부족한 한 개 공간을 비워 두고 auto-fix 는 요소 4개를 이용해 빈 곳을 채웁니다.</p>
+
+    <h2>row-gap, column-gap</h2>
+    <div class="grid-container-row-column-gap">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    
+    <h2>gap: 30px 10px</h2>
+    <div class="grid-container-gap">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>row-gap: 30px; column-gap 10px</p>
+
+    <h2>gap: 10px</h2>
+    <div class="grid-container-gap2">
+        <div class="grid-item">aaa</div>
+        <div class="grid-item">bbb</div>
+        <div class="grid-item">ccc</div>
+        <div class="grid-item">ddd</div>
+        <div class="grid-item">eee</div>
+        <div class="grid-item">fff</div>
+        <div class="grid-item">ggg</div>
+        <div class="grid-item">hhh</div>
+        <div class="grid-item">iii</div>
+    </div>
+    <p>row-gap: 10px; column-gap 10px</p>
+    
+
 
     
     
